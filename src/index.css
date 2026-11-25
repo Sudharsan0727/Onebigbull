@@ -1,0 +1,601 @@
+@import "tailwindcss";
+
+@theme {
+  --font-syne: 'Syne', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --light-black: #16151a;
+  --white: #ffffff;
+  --purple: #16A452;
+  --purple-dark: #128843;
+  --yellow: #16A452;
+  --yellow-dark: #128843;
+  --black: #000000;
+  --grey: #f5f5f5;
+  --light-sea-green: #3da9a2;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--black);
+  font-family: 'Syne', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, select {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* NuReach button styles */
+.nureach-btn {
+  background-color: var(--background);
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.nureach-btn:hover {
+  background-color: var(--light-black);
+  color: var(--white);
+  border-color: var(--light-black);
+}
+
+.nureach-btn-dark {
+  background-color: var(--light-black);
+  color: var(--white);
+  border: 1px solid var(--light-black);
+  border-radius: 12px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.nureach-btn-dark:hover {
+  background-color: #000000;
+  color: var(--background);
+}
+
+.nureach-btn-purple {
+  background-color: var(--purple);
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.nureach-btn-purple:hover {
+  background-color: var(--light-black);
+  color: var(--white);
+}
+
+.nureach-btn-white {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.nureach-btn-white:hover {
+  background-color: var(--background);
+  color: #000000;
+}
+
+/* NuReach Vector Wave Underline Effect */
+.text-underline-wave {
+  position: relative;
+  display: inline-block;
+}
+
+.text-underline-wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q25,0 50,10 T100,10' fill='none' stroke='%2316A452' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  background-size: 60px 8px;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4cfc3;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16A452;
+}
+
+/* NuReach Hero Background Fade Overlay */
+.hero_background-fade,
+.hero__background-fade {
+  z-index: auto;
+  background-color: #0000;
+  background-image: linear-gradient(270deg, var(--background), #fff0 16%), linear-gradient(to right, #ffffff, #fff0 10%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* NuReach Wave Graphic Continuous 3D Morphing & Rotate Animation */
+@keyframes waveRotate {
+  0% {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+  33% {
+    transform: translate3d(0px, 20px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-16deg) skew(48deg, -6deg);
+  }
+  66% {
+    transform: translate3d(0px, 10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) skew(-24deg, 0deg);
+  }
+  85% {
+    transform: translate3d(0px, 18px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-13deg) skew(35deg, -4deg);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+}
+
+.cta-graphic {
+  opacity: 0.5;
+  max-width: 80%;
+  height: 35rem;
+  position: absolute;
+  inset: auto 1% -36% auto;
+  transform: translate3d(0px, 20px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-16deg) skew(48deg, -6deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: waveRotate 24s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* NuReach Services 2x2 Grid Hover Effect & Spinning Circle */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  transition: background-color 0.35s ease, background-image 0.35s ease;
+}
+
+.service-card:hover {
+  background-color: #ffffff;
+  background-image: linear-gradient(180deg, #ffffff 0%, rgba(253, 187, 16, 0.08) 100%);
+}
+
+.service-card .growth-circle {
+  position: absolute;
+  top: -2.5rem;
+  right: -2.5rem;
+  width: 14rem;
+  height: 14rem;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition: opacity 0.4s ease;
+  animation: circleSpin 55s linear infinite;
+}
+
+.service-card:hover .growth-circle {
+  opacity: 1;
+}
+
+@keyframes circleSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Infinite Marquee Animation for Brand Logos */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  align-items: center;
+  flex: none;
+  white-space: nowrap;
+  background-color: transparent;
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+
+.logo-list-marquee {
+  display: flex;
+  align-items: center;
+  flex: none;
+  white-space: nowrap;
+  background-color: #16A45299;
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover,
+.logo-list-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* NuReach Testimonials 3D Morphing & Rotating Circle-9 Effect */
+@keyframes nureachCircle9Morph {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+  60% {
+    transform: rotateX(16deg) rotateY(10deg) rotateZ(180deg) skew(7deg, -20deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg) skew(0deg, 0deg);
+  }
+}
+
+.circle-9-animated {
+  position: absolute;
+  width: 35rem;
+  max-width: none;
+  inset: 38% -18% auto auto;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: nureachCircle9Morph 25s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+@media (max-width: 1024px) {
+  .circle-9-animated {
+    width: 28rem;
+    inset: 44% -12% auto auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .circle-9-animated {
+    width: 20rem;
+    inset: auto -10% -8% auto;
+  }
+}
+
+/* NuReach Contact Capa 2 Waving Ribbon Effect */
+@keyframes nureachCtaWave {
+  0% {
+    transform: translate3d(0px, 0px, 0px) rotate(0deg) skew(0deg, 0deg);
+  }
+  33% {
+    transform: translate3d(0px, 20px, 0px) rotateZ(-16deg) skew(48deg, -6deg);
+  }
+  66% {
+    transform: translate3d(0px, 0px, 0px) rotateZ(-4deg) skew(-24deg, 0deg);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px) rotate(0deg) skew(0deg, 0deg);
+  }
+}
+
+.cta-wave-animated {
+  position: absolute;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: nureachCtaWave 28s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Scroll Reveal Animations */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-up.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-fade-in {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+.reveal-fade-in.is-revealed {
+  opacity: 1;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.is-revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.is-revealed.delay-75,  .is-revealed .delay-75  { transition-delay: 75ms; }
+.is-revealed.delay-100, .is-revealed .delay-100 { transition-delay: 100ms; }
+.is-revealed.delay-150, .is-revealed .delay-150 { transition-delay: 150ms; }
+.is-revealed.delay-200, .is-revealed .delay-200 { transition-delay: 200ms; }
+.is-revealed.delay-250, .is-revealed .delay-250 { transition-delay: 250ms; }
+.is-revealed.delay-300, .is-revealed .delay-300 { transition-delay: 300ms; }
+.is-revealed.delay-400, .is-revealed .delay-400 { transition-delay: 400ms; }
+.is-revealed.delay-500, .is-revealed .delay-500 { transition-delay: 500ms; }
+
+/* Services card & rotating growth-circle hover effect */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+    background-color: #d9ffe9;
+}
+
+.service-card .growth-circle {
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 140px;
+  height: 140px;
+  opacity: 0;
+  transform: rotate(0deg) scale(0.8);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.service-card:hover .growth-circle {
+  opacity: 0.85;
+  transform: rotate(180deg) scale(1.15);
+}
+
+/* Team section card animations */
+.team-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 8px 8px 0px 0px #16A452;
+}
+
+.team-card .team-growth-circle {
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 130px;
+  height: 130px;
+  opacity: 0;
+  transform: rotate(0deg) scale(0.7);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.team-card:hover .team-growth-circle {
+  opacity: 0.25;
+  transform: rotate(180deg) scale(1.1);
+}
+
+/* Photo shine sweep animation */
+.team-shine {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.team-card:hover .team-shine {
+  left: 140%;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 35s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spinSlow 45s linear infinite reverse;
+}
+
+/* Case Study Expanding Lines */
+.case-line-v {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 0%;
+  background-color: #3ea9a2;
+  transform: translate(-50%, -50%);
+  transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.case-line-v.is-revealed {
+  height: 100%;
+}
+
+.case-line-h {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 4px;
+  width: 0%;
+  background-color: #3ea9a2;
+  transform: translate(-50%, -50%);
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.case-line-h.is-revealed {
+  width: 100%;
+}
+
+/* Brand Responsibility Card Wave Animation */
+.brand-card-wave {
+  position: absolute;
+  right: -6%;
+  bottom: -25%;
+  width: 34rem;
+  max-width: none;
+  opacity: 0.45;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: nureachCtaWave 26s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .brand-card-wave {
+    width: 24rem;
+    right: -12%;
+    bottom: -18%;
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-card-wave {
+    width: 17rem;
+    right: -15%;
+    bottom: -10%;
+    opacity: 0.22;
+  }
+}
+
+/* Testimonial Quote Slide In/Out Animation */
+@keyframes quoteSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-quote-in {
+  animation: quoteSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hover micro-interactions */
+.hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
